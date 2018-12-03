@@ -25,3 +25,33 @@
   (if (configuration-layer/layer-used-p 'lsp)
       (lsp-julia-enable)
     (message "`lsp' layer is not installed, please add `lsp' layer to your dotfile.")))
+
+(defun spacemacs/julia-repl-switch ()
+  (interactive)
+  (julia-repl)
+  (evil-insert-state))
+
+(defun spacemacs/julia-repl-edit-switch ()
+  (interactive)
+  (julia-repl-edit)
+  (spacemacs/julia-repl-switch))
+
+(defun spacemacs/julia-repl-macroexpand-switch ()
+  (interactive)
+  (julia-repl-macroexpand)
+  (spacemacs/julia-repl-switch))
+
+(defun spacemacs/julia-repl-send-line-switch ()
+  (interactive)
+  (julia-repl-send-line)
+  (spacemacs/julia-repl-switch))
+
+(defun spacemacs/julia-repl-send-region-or-line-switch (&optional prefix suffix)
+  (interactive)
+  (julia-repl-send-region-or-line prefix suffix)
+  (spacemacs/julia-repl-switch))
+
+(defun spacemacs/julia-repl-send-buffer-switch (arg)
+  (interactive "P")
+  (julia-repl-send-buffer arg)
+  (spacemacs/julia-repl-switch))

@@ -55,15 +55,21 @@
               (spacemacs/set-leader-keys-for-minor-mode
                 'julia-repl-mode
                 "'" 'julia-repl-edit
+                "\"" 'spacemacs/julia-repl-edit-switch
                 "hh" 'julia-repl-doc
                 "w" 'julia-repl-workspace
                 "em" 'julia-repl-macroexpand
+                "eM" 'spacemacs/julia-repl-macroexpand-switch
                 "r"  'julia-repl
+                "R"  'spacemacs/julia-repl-switch
                 "si" 'julia-repl
+                "sI" 'spacemacs/julia-repl-switch
                 "sb" 'julia-repl-send-buffer
+                "sB" 'spacemacs/julia-repl-send-buffer-switch
                 "sl" 'julia-repl-send-line
+                "sL" 'spacemacs/julia-repl-send-line-switch
                 "sr" 'julia-repl-send-region-or-line
-                "em" 'julia-repl-macroexpand))))
+                "sR" 'spacemacs/julia-repl-send-region-or-line-switch))))
 
 (defun julia/post-init-evil-surround ()
   (with-eval-after-load 'evil-surround
